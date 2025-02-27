@@ -1,0 +1,184 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 1.2rem;
+    background: #222;
+    background-image: url('https://img.rawpixel.com/s3fs-private/rawpixel_images/website_content/upwk61868264-wikimedia-image.jpg?w=1000&dpr=1&fit=default&crop=default&q=65&vib=3&con=3&usm=15&bg=F4F4F3&auto=format&ixlib=js-2.2.1&s=12c2d319d40036006de65b37f08f3bd6');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+/* Dark Overlay for Readability */
+body::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+}
+
+/* Centered Weather Card */
+.card {
+    position: relative;
+    z-index: 2;
+    background: rgba(0, 0, 0, 0.7); /* Dark but slightly transparent */
+    color: white;
+    padding: 2.5em;
+    border-radius: 24px;
+    width: 100%;
+    max-width: 600px; /* Slightly bigger */
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+/* Search Bar */
+.search {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    margin-bottom: 1.5rem;
+    width: 100%;
+}
+
+/* Wider Search Input */
+input.search-bar {
+    border: none;
+    outline: none;
+    padding: 1em 1.5em;
+    border-radius: 25px;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    font-family: inherit;
+    font-size: 1.1rem;
+    width: 100%;
+    max-width: 440px; /* Wider */
+    height: 3rem;
+    transition: 0.3s ease-in-out;
+}
+
+input.search-bar::placeholder {
+    color: rgba(255, 255, 255, 0.7);
+}
+
+/* Search Button */
+button {
+    border: none;
+    border-radius: 50%;
+    height: 45px;
+    width: 45px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+    cursor: pointer;
+    transition: 0.3s ease-in-out;
+}
+
+button:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+/* Weather Information */
+.weather {
+    text-align: left;
+}
+
+/* City Name */
+h1.city {
+    font-size: 1.8rem;
+    font-weight: 600;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    margin-bottom: 0.2rem;
+}
+
+h1.temp {
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+
+.flex {
+    display: flex;
+    align-items: center;
+}
+
+/* Temperature */
+.temp {
+    font-size: 2.5rem; /* Bigger */
+    font-weight: 600;
+    margin: 0.5rem 0;
+}
+
+/* Weather Description */
+.weather-info {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Description */
+.description {
+    font-size: 1.5rem;
+    text-transform: capitalize;
+    margin-left: 8px;
+}
+
+/* Weather Stats */
+.humidity, .wind {
+    font-size: 1.2rem;
+    margin: 0.2rem 0;
+}
+
+.weather.loading {
+    visibility: hidden;
+    max-height: 20px;
+    position: relative;
+}
+
+.weather.loading:after {
+    visibility: visible;
+    content: "Loading...";
+    color: white;
+    position: absolute;
+    top: 0;
+    left: 20px;
+}
+
+/* Responsive Design */
+@media (max-width: 500px) {
+    .card {
+        padding: 2em;
+    }
+
+    h1.city {
+        font-size: 1.8rem;
+    }
+
+    .temp {
+        font-size: 3.8rem;
+    }
+
+    input.search-bar {
+        font-size: 1rem;
+        max-width: 100%;
+    }
+}
